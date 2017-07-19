@@ -4,3 +4,6 @@ C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\Overwatch
 C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\OverwatchHeroInfo.API\bin\Debug\netcoreapp1.1\OverwatchHeroInfo.API.dll
 C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\OverwatchHeroInfo.API\obj\Debug\netcoreapp1.1\OverwatchHeroInfo.API.csprojResolveAssemblyReference.cache
 C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\OverwatchHeroInfo.API\obj\Debug\netcoreapp1.1\OverwatchHeroInfo.API.AssemblyInfo.cs
+C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\OverwatchHeroInfo.API\bin\Debug\netcoreapp1.1\OverwatchHeroInfo.API.pdb
+C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\OverwatchHeroInfo.API\obj\Debug\netcoreapp1.1\OverwatchHeroInfo.API.dll
+C:\Users\Gray\Documents\GitHub\OverwatchHeroInfo\OverwatchHeroInfo.API\OverwatchHeroInfo.API\obj\Debug\netcoreapp1.1\OverwatchHeroInfo.API.pdb
