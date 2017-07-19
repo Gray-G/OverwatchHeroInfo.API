@@ -9,9 +9,10 @@ using OverwatchHeroInfo.API.Enums;
 namespace OverwatchHeroInfo.API.Migrations
 {
     [DbContext(typeof(HeroInfoContext))]
-    partial class HeroInfoContextModelSnapshot : ModelSnapshot
+    [Migration("20170719222838_EntityChanges1")]
+    partial class EntityChanges1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
