@@ -12,6 +12,8 @@ namespace OverwatchHeroInfo.API.Entities
         public int Id { get; set; }
 
         public Enums.Name Name { get; set; }
+        public bool IsStrongAgainst { get; set; }
+        public bool IsWeakAgainst { get; set; }
 
         public Hero Hero { get; set; }
         public int HeroId { get; set; }
