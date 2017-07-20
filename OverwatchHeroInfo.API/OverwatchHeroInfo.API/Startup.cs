@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OverwatchHeroInfo.API.Entities;
 using Microsoft.EntityFrameworkCore;
+using OverwatchHeroInfo.API.Services;
 
 namespace OverwatchHeroInfo.API
 {
@@ -22,6 +23,8 @@ namespace OverwatchHeroInfo.API
 
             var connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HeroInfoDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<HeroInfoContext>(o => o.UseSqlServer(connectionString));
+
+            services.AddScoped<IHeroInfoRepository, HeroInfoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -29,6 +29,8 @@ namespace OverwatchHeroInfo.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     HeroId = table.Column<int>(nullable: false),
+                    IsStrongAgainst = table.Column<bool>(nullable: false),
+                    IsWeakAgainst = table.Column<bool>(nullable: false),
                     Name = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

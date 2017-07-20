@@ -14,6 +14,5 @@ namespace OverwatchHeroInfo.API.Entities
         public Enums.Name Name { get; set; }
 
         public ICollection<CounterPick> CounterPicks { get; set; }
-
     }
 }

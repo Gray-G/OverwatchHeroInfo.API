@@ -9,8 +9,8 @@ using OverwatchHeroInfo.API.Enums;
 namespace OverwatchHeroInfo.API.Migrations
 {
     [DbContext(typeof(HeroInfoContext))]
-    [Migration("20170719222838_EntityChanges1")]
-    partial class EntityChanges1
+    [Migration("20170720004644_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -10,7 +10,7 @@ namespace OverwatchHeroInfo.API.Entities
     {
         public HeroInfoContext(DbContextOptions<HeroInfoContext> options) : base(options)
         {
-            Database.Migrate();
+            Database.EnsureCreated();
         }
 
         public DbSet<Hero> Heroes { get; set; }
