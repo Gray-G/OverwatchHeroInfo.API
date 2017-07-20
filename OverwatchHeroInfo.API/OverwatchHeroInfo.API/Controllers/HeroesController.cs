@@ -10,8 +10,7 @@ namespace OverwatchHeroInfo.API.Controllers
     [Route("api/heroes")]
     public class HeroesController : Controller
     {
-        IHeroInfoRepository _heroInfoRepository;
-
+        private IHeroInfoRepository _heroInfoRepository;
         public HeroesController(IHeroInfoRepository heroInfoRepository)
         {
             _heroInfoRepository = heroInfoRepository;
@@ -20,8 +19,9 @@ namespace OverwatchHeroInfo.API.Controllers
         [HttpGet()]
         public IActionResult GetHeroes()
         {
-            var heroes = _heroInfoRepository.GetHeroes();
-            return Ok(heroes);
+            var heroEntities = _heroInfoRepository.GetHeroes();
+            var results = AutoMapper.Mapper.Map<IEnumerable<Models.HeroDto>>(heroEntities);
+            return Ok(results);
         }
 
         [HttpGet("{id}")]
