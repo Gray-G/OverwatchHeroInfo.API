@@ -34,6 +34,12 @@ namespace OverwatchHeroInfo.API
 
             app.UseMvc();
 
+            AutoMapper.Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Entities.Hero, Models.HeroDto>();
+                cfg.CreateMap<Entities.CounterPick, Models.CounterPickDto>();
+            });
+
             heroInfoContext.EnsureSeedDataForContext();
 
             if (env.IsDevelopment())
