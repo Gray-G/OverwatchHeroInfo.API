@@ -8,7 +8,7 @@ namespace OverwatchHeroInfo.API
 {
     public interface IHeroInfoRepository
     {
-        Hero GetHero(int heroId, bool includeIsStrongAgainst, bool includeIsWeakAgainst);
         IEnumerable<Hero> GetHeroes();
+        ICollection<CounterPick> GetCounterPicks(int heroId, bool includeIsStrongAgainst, bool includeIsWeakAgainst);
     }
 }

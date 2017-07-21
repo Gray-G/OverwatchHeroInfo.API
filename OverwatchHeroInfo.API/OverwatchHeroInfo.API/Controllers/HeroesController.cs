@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OverwatchHeroInfo.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +22,16 @@ namespace OverwatchHeroInfo.API.Controllers
         {
             var heroEntities = _heroInfoRepository.GetHeroes();
             var results = AutoMapper.Mapper.Map<IEnumerable<Models.HeroDto>>(heroEntities);
+
             return Ok(results);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetHero(int id, bool includeIsStrongAgainst, bool includeIsWeakAgainst)
+        public IActionResult GetCounterPicks(int id, bool includeIsStrongAgainst = true, bool includeIsWeakAgainst = true)
         {
-            // To be implemented
-
-            return Ok();
+            var counterPickEntities = _heroInfoRepository.GetCounterPicks(id, includeIsStrongAgainst, includeIsWeakAgainst);
+            var results = AutoMapper.Mapper.Map<ICollection<CounterPickDto>>(counterPickEntities);
+            return Ok(results);
         }
     }
 }

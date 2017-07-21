@@ -22,11 +22,9 @@ namespace OverwatchHeroInfo.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("CounterPickState");
+
                     b.Property<int>("HeroId");
-
-                    b.Property<bool>("IsStrongAgainst");
-
-                    b.Property<bool>("IsWeakAgainst");
 
                     b.Property<int>("Name");
 

@@ -9,37 +9,39 @@ namespace OverwatchHeroInfo.API.Services
 {
     public class HeroInfoRepository : IHeroInfoRepository
     {
-        HeroInfoContext _context;
-
+        private HeroInfoContext _context;
         public HeroInfoRepository(HeroInfoContext context)
         {
             _context = context;
         }
 
-        public Hero GetHero(int heroId, bool includeIsStrongAgainst, bool includeIsWeakAgainst)
+        public ICollection<CounterPick> GetCounterPicks(int heroId, bool includeIsStrongAgainst, bool includeIsWeakAgainst)
         {
             if (includeIsStrongAgainst && !includeIsWeakAgainst)
             {
-                return _context.Heroes
-                    .Include(h => h.CounterPicks
-                    .Where(j => j.IsStrongAgainst == true))
-                    .Where(h => h.Id == heroId).FirstOrDefault();
+                return _context.CounterPicks
+                    .Where(h => h.HeroId == heroId && h.CounterPickState == Enums.CounterPickState.IsStrongAgainst)
+                    .ToList();
             }
 
             if (!includeIsStrongAgainst && includeIsWeakAgainst)
             {
-                return _context.Heroes
-                    .Include(h => h.CounterPicks
-                    .Where(j => j.IsWeakAgainst == true))
-                    .Where(h => h.Id == heroId).FirstOrDefault();
+                return _context.CounterPicks
+                    .Where(h => h.HeroId == heroId && h.CounterPickState == Enums.CounterPickState.IsWeakAgainst)
+                    .ToList();
             }
 
-            return _context.Heroes.Include(h => h.CounterPicks).Where(h => h.Id == heroId).FirstOrDefault();
+            return _context.CounterPicks
+                .Where(h => h.HeroId == heroId)
+                .ToList();
         }
     
         public IEnumerable<Hero> GetHeroes()
         {
-            return _context.Heroes.OrderBy(h => h.Name).ToList();
+            return _context.Heroes
+                .OrderBy(h => h.Name)
+                .Include(h => h.CounterPicks)
+                .ToList();
         }
     }
 }

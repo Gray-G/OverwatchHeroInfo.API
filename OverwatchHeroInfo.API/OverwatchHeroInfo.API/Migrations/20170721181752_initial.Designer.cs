@@ -9,8 +9,8 @@ using OverwatchHeroInfo.API.Enums;
 namespace OverwatchHeroInfo.API.Migrations
 {
     [DbContext(typeof(HeroInfoContext))]
-    [Migration("20170720004644_Initial")]
-    partial class Initial
+    [Migration("20170721181752_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,11 +23,9 @@ namespace OverwatchHeroInfo.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("CounterPickState");
+
                     b.Property<int>("HeroId");
-
-                    b.Property<bool>("IsStrongAgainst");
-
-                    b.Property<bool>("IsWeakAgainst");
 
                     b.Property<int>("Name");
 

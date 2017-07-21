@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace OverwatchHeroInfo.API.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,9 +28,8 @@ namespace OverwatchHeroInfo.API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CounterPickState = table.Column<int>(nullable: false),
                     HeroId = table.Column<int>(nullable: false),
-                    IsStrongAgainst = table.Column<bool>(nullable: false),
-                    IsWeakAgainst = table.Column<bool>(nullable: false),
                     Name = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

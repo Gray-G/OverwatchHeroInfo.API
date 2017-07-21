@@ -10,10 +10,9 @@ namespace OverwatchHeroInfo.API.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
+      
         public Enums.Name Name { get; set; }
-        public bool IsStrongAgainst { get; set; }
-        public bool IsWeakAgainst { get; set; }
+        public Enums.CounterPickState CounterPickState { get; set; }
 
         public Hero Hero { get; set; }
         public int HeroId { get; set; }

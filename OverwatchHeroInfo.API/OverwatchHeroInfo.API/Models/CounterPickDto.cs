@@ -9,5 +9,6 @@ namespace OverwatchHeroInfo.API.Models
     {
         public int Id { get; set; }
         public Enums.Name Name { get; set; }
+        public Enums.CounterPickState CounterPickState { get; set; }
     }
 }
